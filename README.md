@@ -47,8 +47,6 @@ The latest release notes are available on the [Wiki](https://github.com/form-dev
 
 More background information, a collection of FORM programs, and a number of courses can be found on the official [FORM website](http://www.nikhef.nl/~form) and on the [Wiki](https://github.com/form-dev/form/wiki).
 
-Information about copying and licensing of this software can be found in the file "[COPYING](COPYING)".
-
 
 Bugs and remarks
 ----------------
