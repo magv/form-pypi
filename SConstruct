@@ -19,14 +19,11 @@ env = Environment(
     ENV=os.environ
 )
 
-hepware = env.Command(
-    "hepware/Makefile", [], "git clone https://github.com/magv/hepware"
-)
 hepware_form = env.Command(
-    f"hepware/form.done", [hepware], "make -C hepware -j6 form.done"
+    ["hepware/form.done", "hepware/bin/tform"],
+    ["hepware/Makefile"],
+    "make -C hepware -j6 form.done",
 )
-env.Precious(hepware)
-env.Precious(hepware_form)
 
 files = [
     File("form-packages/README.md"),
@@ -35,7 +32,7 @@ files = [
     env.Command(
         "form/tform",
         [hepware_form],
-        ["cp hepware/bin/form form/tform", "strip form/tform"],
+        ["cp hepware/bin/tform form/tform", "strip form/tform"],
     ),
 ]
 
